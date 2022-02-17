@@ -15,7 +15,7 @@ class GaleriController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $items = Galeri::paginate(8);
+        $items = Galeri::all(); //paginate(8)
 
         return view('galeri', [
             'items' => $items,

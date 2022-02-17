@@ -6,6 +6,9 @@ use App\Http\Controllers\GuruController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\SejarahController;
+use App\Http\Controllers\TentangController;
+use App\Http\Controllers\VisimisiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +33,9 @@ Route::get('kontak', KontakController::class)->name('kontak.index');
 Route::resource('berita', BeritaController::class)->only(['index', 'show']);
 
 Route::get('page/{slug}', PageController::class)->name('page');
+
+Route::get('tentang', TentangController::class)->name('tentang.index');
+
+Route::get('sejarah', SejarahController::class)->name('sejarah.index');
+
+Route::get('visimisi', VisimisiController::class)->name('visimisi.index');

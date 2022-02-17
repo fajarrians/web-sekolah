@@ -1,39 +1,54 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
   <div class="container">
-    <a class="navbar-brand" href="#">Logo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('home') }}">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="profil-dropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Profil
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="profil-dropdown">
-            <li><a class="dropdown-item" href="{{ route('page', ['slug' => 'tentang']) }}">Tentang</a></li>
-            <li><a class="dropdown-item" href="{{ route('page', ['slug' => 'sejarah']) }}">Sejarah</a></li>
-            <li><a class="dropdown-item" href="{{ route('page', ['slug' => 'visi-misi']) }}">Visi & Misi</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('guru.index') }}">Guru</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('berita.index') }}">Berita</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('galeri.index') }}">Galeri</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('kontak.index') }}">Kontak</a>
-        </li>
-      </ul>
+    <div class="d-flex align-items-center">
+      <div class="site-logo">
+        <a href="{{ route('home') }}" class="d-block">
+          <img src="images/logo.jpg" alt="Image" class="img-fluid">
+        </a>
+      </div>
+      <div class="mr-auto">
+        <nav class="site-navigation position-relative text-right" role="navigation">
+          <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+            <li class="active">
+              <a href="{{ route('home') }}" class="nav-link text-left">Home</a>
+            </li>
+            <li class="has-children">
+              <a href="#" class="nav-link text-left">Profil</a>
+              <ul class="dropdown">
+                <li><a href="{{ route('tentang.index') }}">Tentang</a></li>
+                <li><a href="{{ route('sejarah.index') }}">Sejarah</a></li>
+                <li><a href="{{ route('visimisi.index') }}">Visi & Misi</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="{{ route('guru.index') }}" class="nav-link text-left">Guru</a>
+            </li>
+            <li>
+            <a href="{{ route('berita.index') }}" class="nav-link text-left">Berita</a>
+            </li>
+            <li>
+              <a href="{{ route('galeri.index') }}" class="nav-link text-left">Galeri</a>
+            </li>
+            <li>
+                <a href="{{ route('kontak.index') }}" class="nav-link text-left">Contact</a>
+              </li>
+          </ul>                                                                                                                                                                                                                                                                                          </ul>
+        </nav>
+
+      </div>
+      <div class="ml-auto">
+        <div class="social-wrap">
+          <a href="#"><span class="icon-facebook"></span></a>
+          <a href="#"><span class="icon-twitter"></span></a>
+          <a href="#"><span class="icon-linkedin"></span></a>
+
+          <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
+            class="icon-menu h3"></span></a>
+        </div>
+      </div>
+     
     </div>
   </div>
-</nav>
+
+</header>

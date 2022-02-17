@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
             GaleriSeeder::class,
             PageSeeder::class,
             BeritaSeeder::class,
+            SejarahSeeder::class,
+            TentangSeeder::class,
+            VisimisiSeeder::class,
         ]);
     }
 }

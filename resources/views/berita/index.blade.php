@@ -1,9 +1,10 @@
 @extends('_layout.with-sidebar')
 
 @section('content')
+<div class="container berita">
   <h1>Berita Terbaru</h1>
 
-  @foreach ($items as $item)
+  @foreach ($item as $item)
     <div class="card mb-3">
       <div class="row g-0">
         <div class="col-md-4">
@@ -24,13 +25,23 @@
       </div>
     </div>
   @endforeach
+</div>
+  
 
   {{-- PAGINATION --}}
-  @if ($items->lastPage() > 1)
+  {{-- @if ($items->lastPage() > 1)
     {{ $items->links() }}
-  @endif
+  @endif --}}
 @endsection
 
 @push('sidebar')
-  ini sidebar, bisa ditambahkan artikel terbaru, galeri
+<div class="section-heading">
+  <h3 class="text-black">Berita Terbaru</h3>
+</div>
+  @forelse ($items as $item)
+  
+  <div class="berita-sidebar"><a href="{{ route('berita.index') }}">{{ $item->judul }}</a></div>
+  @empty
+  <div>berita kosong</div>
+  @endforelse
 @endpush

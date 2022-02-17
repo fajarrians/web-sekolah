@@ -14,10 +14,11 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        $items = Berita::paginate(6);
-
+        $item = Berita::all();
+        $items = Berita::paginate(3);
         return view('berita.index', [
-            'items' => $items,
+            'item' => $item,
+            'items' => $items
         ]);
     }
 

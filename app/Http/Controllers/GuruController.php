@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use App\Models\Guru;
 use Illuminate\Http\Request;
 
@@ -15,10 +16,11 @@ class GuruController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $items = Guru::get();
-
+        $item = Guru::get();
+        $items = Berita::paginate(3);
         return view('guru', [
-            'items' => $items,
+            'item' => $item,
+            'items' => $items
         ]);
     }
 }

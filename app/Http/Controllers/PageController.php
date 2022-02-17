@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use App\Models\Page;
 use Illuminate\Http\Request;
 
@@ -16,9 +17,10 @@ class PageController extends Controller
     public function __invoke(Request $request, $slug)
     {
         $item = Page::where('slug', $slug)->firstOrFail();
-
+        $items = Berita::paginate(3);
         return view('page', [
             'item' => $item,
+            'items'=>$items
         ]);
     }
 }
